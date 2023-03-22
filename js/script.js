@@ -20,7 +20,7 @@ console.log(numbers);
 */
 
 let randomOne = Math.floor(Math.random() * 100 + 1);
-document.getElementById('demo').innerHTML = randomOne;
+document.getElementById('demo1').innerHTML = randomOne;
 
 let randomTwo = Math.floor(Math.random() * 100 + 1);
 document.getElementById('demo2').innerHTML = randomTwo;
