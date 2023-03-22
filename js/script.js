@@ -1,35 +1,65 @@
-/*
-// generatore dei numeri
-function generateNumbers(numRandom, max) {
-	const numbers = [];
-	while (numbers.length < numRandom) {
-		const number = getRndNumber(1, 100);
-		if (!numbers.includes(number)) {
-			numbers.push(number);
+//generatore di numeri
+
+function playgame() {
+	function getRandomNumbers() {
+		//creazione array dei numeri
+		const numbers = [];
+		//ciclo per creare i numeri
+		while (numbers.length < 5) {
+			let randomNumber = Math.floor(Math.random() * 100 + 1);
+			//controllo se il numero esiste già
+			if (!numbers.includes(randomNumber)) {
+				numbers.push(randomNumber);
+			}
 		}
+		return numbers;
 	}
-	return numbers;
+
+	function checkNumbers() {
+		let inputNumber = document.querySelectorAll('input');
+		const userNumber = [];
+		for (let i = 0; i < inputNumber.length; i++) {
+			if (!userNumber.includes(inputNumber[i].value)) {
+				userNumber.push(parseInt(inputNumber[i].value));
+			}
+		}
+		return userNumber;
+	}
+
+	function responsiveNumbers() {
+		let userNumbs = checkNumbers();
+
+		console.log(userNumbs);
+
+		const indovinati = [];
+		for (let i = 0; i < userNumbs.lenght; i++) {
+			if (casualNumber.includes(userNumbs[i])) {
+				indovinati.push(userNumbs[i]);
+			}
+		}
+		console.log(indovinati);
+		document.querySelector(
+			'.result'
+		).innerHTML = `hai indovinati i seguenti numeri: ${indovinati} - il tuo punteggio è : ${indovinati.length}`;
+	}
+
+	const casualNumber = getRandomNumbers();
+
+	let display = document.createElement('div');
+	display.innerHTML = `${casualNumber}`;
+	display.classList.add('text-primary', 'fs-3');
+	document.querySelector('#numbers').appendChild(display);
+
+	let input = document.querySelector('#userinput');
+
+	setTimeout(() => {
+		display.remove();
+		input.classList.remove('d-none');
+	}, 5000);
+
+	const check = document.getElementById('validate');
+	check.addEventListener('click', responsiveNumbers);
 }
 
-// quantità di numeri da indovinare
-const NUMBERS = 5;
-
-// genera l'array con i numeri
-const numbers = generateNumbers(NUMBERS, number);
-console.log(numbers);
-*/
-
-let randomOne = Math.floor(Math.random() * 100 + 1);
-document.getElementById('demo1').innerHTML = randomOne;
-
-let randomTwo = Math.floor(Math.random() * 100 + 1);
-document.getElementById('demo2').innerHTML = randomTwo;
-
-let randomThree = Math.floor(Math.random() * 100 + 1);
-document.getElementById('demo3').innerHTML = randomThree;
-
-let randomFour = Math.floor(Math.random() * 100 + 1);
-document.getElementById('demo4').innerHTML = randomFour;
-
-let randomFive = Math.floor(Math.random() * 100 + 1);
-document.getElementById('demo5').innerHTML = randomFive;
+const play = document.getElementById('start');
+play.addEventListener('click', playgame);
