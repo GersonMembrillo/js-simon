@@ -50,7 +50,7 @@ function playgame() {
 
 	let display = document.createElement('div');
 	display.innerHTML = `${casualNumber}`;
-	display.classList.add('text-primary', 'fs-3');
+	display.classList.add('text-white', 'fs-3');
 	document.querySelector('#numbers').appendChild(display);
 
 	let input = document.querySelector('#userinput');
@@ -58,7 +58,7 @@ function playgame() {
 	setTimeout(() => {
 		display.remove();
 		input.classList.remove('d-none');
-	}, 5000);
+	}, 1000);
 
 	const check = document.getElementById('validate');
 	check.addEventListener('click', responsiveNumbers);
