@@ -32,18 +32,18 @@ function playgame() {
 		console.log(userNumbs);
 
 		const indovinati = [];
-		for (let i = 0; i < userNumbs.lenght; i++) {
+		for (let i = 0; i < userNumbs.length; i++) {
+			console.log(userNumbs, userNumbs[i]);
 			if (casualNumber.includes(userNumbs[i])) {
 				indovinati.push(userNumbs[i]);
 			}
 		}
+
 		console.log(indovinati);
 		document.querySelector(
 			'.result'
 		).innerHTML = `hai indovinati i seguenti numeri: ${indovinati} - il tuo punteggio è : ${indovinati.length}`;
 	}
-
-	console.log('userNumbs: ', 'userNumbs[i]');
 
 	const casualNumber = getRandomNumbers();
 	console.log(casualNumber);
