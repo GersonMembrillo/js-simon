@@ -44,6 +44,7 @@ function playgame() {
 	}
 
 	const casualNumber = getRandomNumbers();
+	console.log(casualNumber);
 
 	let display = document.createElement('div');
 	display.innerHTML = `${casualNumber}`;
