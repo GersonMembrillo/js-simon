@@ -43,6 +43,8 @@ function playgame() {
 		).innerHTML = `hai indovinati i seguenti numeri: ${indovinati} - il tuo punteggio è : ${indovinati.length}`;
 	}
 
+	console.log('userNumbs: ', 'userNumbs[i]');
+
 	const casualNumber = getRandomNumbers();
 	console.log(casualNumber);
 
